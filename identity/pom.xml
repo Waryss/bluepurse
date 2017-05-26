@@ -11,12 +11,54 @@
 	<name>Blue purse Identity Maven Module</name>
 	<description>Users identity management</description>
 
+	<properties>
+		<springboot.version>1.5.3.RELEASE</springboot.version>
+		<mongodb.version>1.10.3.RELEASE</mongodb.version>
+		<start-class>com.javaadvent.bootrest.TodoAppConfig</start-class>
+	</properties>
+
 	<dependencies>
+		<!-- ************************ -->
+		<!-- Spring boot dependencies -->
+		<!-- ************************ -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>1.5.2.RELEASE</version>
+			<version>${springboot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure-processor</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+
+		<!-- ******************* -->
+		<!-- Spring mongo dependencies -->
+		<!-- ******************* -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${mongodb.version}</version>
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven Support -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
