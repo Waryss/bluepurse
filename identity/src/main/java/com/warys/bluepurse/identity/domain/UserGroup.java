@@ -1,4 +1,4 @@
-package com.warys.bluepurse.idenity.domain;
+package com.warys.bluepurse.identity.domain;
 
 public class UserGroup {
 

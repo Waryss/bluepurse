@@ -21,7 +21,6 @@
 
 	<modules>
 		<module>identity</module>
-		<module>core</module>
 	</modules>
 
 	<dependencies>
