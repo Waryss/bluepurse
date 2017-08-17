@@ -23,12 +23,6 @@
 		<module>identity</module>
 	</modules>
 
-	<dependencies>
-		<!-- ******************* -->
-		<!-- Spring dependencies -->
-		<!-- ******************* -->
-		
-	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
