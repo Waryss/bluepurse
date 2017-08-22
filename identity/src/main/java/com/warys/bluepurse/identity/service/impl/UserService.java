@@ -48,7 +48,7 @@ public class UserService implements IUserService {
 		if (!StringUtils.isEmpty(email)) {
 			user = userRepository.findByEmailAndPassword(email, password);
 		} else if (!StringUtils.isEmpty(username)) {
-			user = userRepository.findByLoginAndPassword(username, password);
+			user = userRepository.findByUsernameAndPassword(username, password);
 		} else {
 			throw new IdentityException(IdentityErrorCode.I100, "Le champ [username] ou [email] doit être spécifié");
 		}

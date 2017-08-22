@@ -3,6 +3,9 @@ package com.warys.bluepurse.identity.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 
 public class User implements Serializable {
@@ -14,15 +17,21 @@ public class User implements Serializable {
 
 	@Id
 	private long id;
+	@Email(message = "*Please provide a valid Email")
+	@NotEmpty(message = "*Please provide an email")
 	private String email;
+	@Length(min = 5, message = "*Your password must have at least 5 characters")
+	@NotEmpty(message = "*Please provide your password")
 	private String password;
-	private String login;
+	@NotEmpty(message = "*Please provide a username")
+	private String username;
 	private String firstname;
 	private String lastname;
-	private String group;
-	private int status;
+	private boolean admin;
+	private boolean actif;
 	private Date subscriptionDate;
 	private Date unsubscriptionDate;
+	private Date lastUpdateDate;
 
 	public long getId() {
 		return id;
@@ -45,15 +54,16 @@ public class User implements Serializable {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+//		PasswordEncoder encoder = new BCryptPasswordEncoder();
+//		this.password = encoder.encode(password);
 	}
 
-	public String getLogin() {
-		return login;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getFirstname() {
@@ -72,20 +82,20 @@ public class User implements Serializable {
 		this.lastname = lastname;
 	}
 
-	public String getGroup() {
-		return group;
+	public boolean isAdmin() {
+		return admin;
 	}
 
-	public void setGroup(String group) {
-		this.group = group;
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
-	public int getStatus() {
-		return status;
+	public boolean isActif() {
+		return actif;
 	}
 
-	public void setStatus(int status) {
-		this.status = status;
+	public void setActif(boolean actif) {
+		this.actif = actif;
 	}
 
 	public Date getSubscriptionDate() {
@@ -104,11 +114,18 @@ public class User implements Serializable {
 		this.unsubscriptionDate = unsubscriptionDate;
 	}
 
+	public Date getLastUpdateDate() {
+		return lastUpdateDate;
+	}
+
+	public void setLastUpdateDate(Date lastUpdateDate) {
+		this.lastUpdateDate = lastUpdateDate;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", password=" + password + ", login=" + login + ", firstname="
+		return "User [id=" + id + ", email=" + email + ", password=" + password + ", login=" + username + ", firstname="
 				+ firstname + ", lastname=" + lastname + "]";
 	}
-	
-	
+
 }
