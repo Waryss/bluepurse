@@ -12,7 +12,7 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<spring.version>4.1.6.RELEASE</spring.version>
+		<spring.version>5.2.4.RELEASE</spring.version>
 		<mysql.version>5.1.30</mysql.version>
 		<easymock.version>3.2</easymock.version>
 		<slf4j.version>1.7.7</slf4j.version>
