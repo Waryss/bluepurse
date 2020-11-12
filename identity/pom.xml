@@ -13,7 +13,7 @@
 
 	<properties>
 		<springboot.version>2.2.5.RELEASE</springboot.version>
-		<mongodb.version>2.2.5.RELEASE</mongodb.version>
+		<mongodb.version>3.1.1</mongodb.version>
 		<start-class>com.javaadvent.bootrest.TodoAppConfig</start-class>
 	</properties>
 
