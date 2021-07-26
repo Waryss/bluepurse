@@ -16,7 +16,7 @@
 		<mysql.version>5.1.30</mysql.version>
 		<easymock.version>3.2</easymock.version>
 		<slf4j.version>1.7.7</slf4j.version>
-		<logback.version>1.2.3</logback.version>
+		<logback.version>1.2.4-groovyless</logback.version>
 		<log4j.version>1.2.17</log4j.version>
 		<junit.version>4.13</junit.version>
 	</properties>
